@@ -92,3 +92,53 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Introduced with NextJS 13
 - Marked as stable but still relatively new & partially buggy
 - Supports modern Next & React feature (fullstack React apps)
+
+**NOTE**:
+
+- the **app** directory is the most important in the modern NextJS application
+
+  ![](screenshots/filesystem-based-routing.png)
+
+- In a new NextJS app, the **page.js** is a reserved filename
+- the **page.js** is also called a **server component** because NextJS ensures that this is rendered from the server (when you try to use **console.log**, you won't be able to view any log statement in the console logs. Instead, you will see it in the **backend** via the terminal)
+- in summary, it is created from a React component but it treated in a special way
+
+### Layout file
+
+![](screenshots/layout-file.png)
+
+- IMO, acts like the parent component of an application wherein you use the **children** props to render the children component.
+- Every NextJS projects needs have at **least one root layout JS** file (IMO, this is similar to the **main.tsx/app.js** of a React project wherein you define the **createRoot** component and use the **getElementById** to render the main application component)
+
+![](screenshots/nested-layout-file.png)
+
+- You can also have nested **layout** JS file wherein the layout defined on that certain directory will only be used on that certain directory and to any nested directories there(e.g. a **layout** file in the **about** directory)
+
+- A **wrapper** of one or more pages.
+
+## metadata
+
+![](screenshots/metadata.png)
+
+- **metadata** is a reserved name in NextJS
+- This is where we define the **head** tag of the HTML file
+- if you export or define an variable with **metadata**, it should contain an object where you can then set the title of the page and the description of the page and also some other metadata fields that are covered by that layout(e.g. a **layout** file in the root directory)
+
+## Favicon
+
+If you add an **icon.png** in the **app** directory, it will be automatically treated as a **favicon**
+
+## Reserved Filenames
+
+https://nextjs.org/docs/app/api-reference/file-conventions
+
+| Filename     | Function                                                                                                                       |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| page.js      | Create a new page(e.g., **app/about/page.js**)                                                                                 |
+| layout.js    | Create a new layout that wraps sibling and nested pages                                                                        |
+| not-found.js | Fallback page for "not Found" errors (thrown by sibling pages or nested pages or layouts)                                      |
+| error.js     | Fallback page for other errors (thrown by sibling pages or nested pages or layouts)                                            |
+| loading.js   | Fallback page which is shown whilst siblng or nested pages(or layouts) are fetching data                                       |
+| route.js     | Allows you to create an API route(i.e., a page which does **NOT** return JSX code but instead data (e.g., in the JSON format)) |
+
+## Dynamic Routes & Using Route Parameters
