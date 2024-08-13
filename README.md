@@ -142,3 +142,14 @@ https://nextjs.org/docs/app/api-reference/file-conventions
 | route.js     | Allows you to create an API route(i.e., a page which does **NOT** return JSX code but instead data (e.g., in the JSON format)) |
 
 ## Dynamic Routes & Using Route Parameters
+
+In order to have multiple pages in NextJS (e.g., a **blog** with multiple pages), we can use **square brackets** and define a placeholder inside (e.g., **slug**). Then, create a **page.js** file. It is this **page.js** that is becoming active for different segment path values.
+
+The **square bracket** here simply tells NextJS that we want to have some path segment after blog in this case that we don't know the exact value of the segment yet. And then it's this placeholder, this identifier **slug** that will give us access to the concrete value that we do get when that route is loaded.
+
+Because NextJS passes a **props** to all those page components(pages in the **slug**) which you can pull out with the help of destructuring. This is the **params** props
+
+![](screenshots/dynamic-routing.png)
+![](screenshots/slug-pages.png)
+
+The inside of the **params** prop is an object where every placeholder you had in such a dynamic route here will be a **key** and the **value** store under that key is the concrete value encoded in the URL(e.g., **post-1**)
