@@ -153,3 +153,27 @@ Because NextJS passes a **props** to all those page components(pages in the **sl
 ![](screenshots/slug-pages.png)
 
 The inside of the **params** prop is an object where every placeholder you had in such a dynamic route here will be a **key** and the **value** store under that key is the concrete value encoded in the URL(e.g., **post-1**)
+
+## Server vs Client Components
+
+- NextJS knows **Server Components**, **React Server Components**, **Client Components**
+
+![](screenshots/react-apps-on-client.png)
+
+**NOTE**: When you are using Create-React-App, you are using **Client Components** out of the box because ReactJS is a pure client side library running code in the browser on the client.
+
+![](screenshots/server-and-client-together.png)
+
+- In NextJS, this changes because NextJS is a fullstack framework
+- By default, all the React components you have in NextJS no matter if they are layouts, pages, or standard components are only rendered in the server that's why they are called **React Server Components**
+
+## NOTE
+
+- As much as possible, only use **use client** down to the component tree
+
+## Images with Unknown Dimensions
+
+![](screenshots/image-unknown-dimension.png)
+
+- The **fill** property in Image component fill the available space with that image
+- **NOTE**: We should avoid using **fill** if we know the width and height of the image
