@@ -177,3 +177,7 @@ The inside of the **params** prop is an object where every placeholder you had i
 
 - The **fill** property in Image component fill the available space with that image
 - **NOTE**: We should avoid using **fill** if we know the width and height of the image
+
+## Suspense
+
+- a component provided by React that allows you to handle loading states and show fallback content until some data or resources has been loaded.
