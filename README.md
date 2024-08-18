@@ -200,3 +200,33 @@ In this example, since we use **Suspense** and wrapped it on our **Meals** compo
 ## NOTE
 
 - in a **page.js** or component in those special files, you can access special props such as **params** which you receive if it is under a page
+
+## notFound
+
+- a NextJS function that will throw the error page that is closer to the page/component that **notFound** function is declared. For example, if we have a **slug** page in **meals** page and have an **error.js** file in that same directory, **notFound** function will use the closest **error.js** file and show that as an error.
+
+## use server
+
+- **NOTE** This will only work if our component is not a client.
+- **NOTE** Another approach is using a separate files for **Server Actions**
+
+- creates a so-called **Server Action** which guarantee that the action only execute on the server and only there. So we don't need to use **onSubmit** on forms because NextJS is a fullstack application.
+- should use **async** function when using a **Server Action**
+- when using **Server Action** in a form, it should be a value on the **action** prop of a form
+
+![](screenshots/server-action.png)
+
+## Creating a Slug & Sanitizing User Inptu for XSS Protection
+
+```bash
+npm i xss slugify
+
+```
+
+**XSS** is a package used for protecting against scripting attacks by sanitizing data while **slugify** works by transliterating Unicode characters into alphanumeric strings (e.g. 字 into zi ).
+
+**NOTE**: Images should be stored in the filesystem and not in the database because it is bad in performance and simply it is not built for that
+
+## useActionState
+
+- Passes two values to the action data which will exist in the first parameter, while the second parameter will remain as the actual value of the data
