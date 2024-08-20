@@ -230,3 +230,53 @@ npm i xss slugify
 ## useActionState
 
 - Passes two values to the action data which will exist in the first parameter, while the second parameter will remain as the actual value of the data
+
+## Development to Production
+
+```bash
+npm run build
+
+```
+
+This will build and prepare our NextJS application for production. Generally, build us a project that we can deploy to our server.
+
+```bash
+npm start
+
+```
+
+This will not start a **development** server but a **production** server. Take note that it will still be hosted on the same port but the reality is its the optimized code since we ran **npm run build**
+
+## Understanding NextJS Caching
+
+- When we run **npm run build**, NextJS pre-generated the pages. This means that the pages are prerendered as **static content** so right from the start, the pages are available so when you refresh the page. Any changes from the code will not be rendered dynamically to the page.
+- The downside of this approach is it never refetches any data added to the database.
+
+  - **FIX** We need to use **revalidatePath** function. This tells NextJS to revalidate the cache that belongs to a certain route path. This means it will throw away the cache for revalidation.
+
+  ```javascript
+    export default Meals(){
+
+      ... //other code
+
+      revalidatePath("/meals"); // by default, it will use the "page"
+      // revalidatePath("/meals", "layout"); // revalidate the "/meals" and the nested pages
+      // revalidatePath("/meals", "page"); // means to revalidate the page which has this path "/meals"
+      redirect('/meals')
+    }
+  ```
+
+## Generating Dynamic metadata
+
+```javascript
+export async function generateMetadta({ params }) {
+  const metal = getMeal(params.mealSlug);
+
+  if (!meal) notFound();
+
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+```
