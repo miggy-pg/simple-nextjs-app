@@ -269,7 +269,9 @@ This will not start a **development** server but a **production** server. Take n
 ## Generating Dynamic metadata
 
 ```javascript
-export async function generateMetadta({ params }) {
+// The "generateMetadata" is a predefined function built in NextJS
+
+export async function generateMetadata({ params }) {
   const metal = getMeal(params.mealSlug);
 
   if (!meal) notFound();
@@ -280,3 +282,7 @@ export async function generateMetadta({ params }) {
   };
 }
 ```
+
+## Dynamic Routes
+
+![](screenshots/dynamic-routes.png)
