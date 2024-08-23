@@ -286,3 +286,47 @@ export async function generateMetadata({ params }) {
 ## Dynamic Routes
 
 ![](screenshots/dynamic-routes.png)
+
+## Parallet Routes
+
+- A feature that allows you to render the content of two separate routes with separate paths on one and the same page.
+- To setup, we must have a **layout**
+- We can use **parallel routes** by using **@** symbol (this is part of the naming convention NextJS looks for).
+
+```javascript
+// app/archive/@archive/page.tsx
+export default function ArchivePage(){
+  return <h1>Archive Page</h1>
+}
+
+// app/archive/@latest/page.tsx
+export default function LatestPage(){
+  return <h1>Latest Page</h1>
+}
+
+// What happened here is that the Layout receive another props which are the parallel routes filename after the '@'
+// So we can access/render the template existing in the @archive/page.tsx and @latest/page.tsx
+
+// The layout page will render these templates. As explained earlier, we must have a layout file
+// app/archive/layout.tsx
+export default function ArchiveLayout({archive, latest}) {
+  return <>
+   The Archive Page
+  <div>
+   {archive}
+  </div>
+  The Latest Page
+  <div>
+    {latest}
+  </div>
+  </>
+}
+
+```
+
+- **NOTE**
+  1. Must make sure that all the parallel routes that are shown in the same page do support all the different paths you wanna support there.
+  2. We can use **default.js** to define the default fallback content that should be displayed if that route doesn't have a more specific content for the path that's currently loaded.
+  3. We can remove **page.js** of the other parallel route if the **default.js** file has the same content of the **page.js** file(remember that parallel route uses **page.js** to render a template)
+
+![](screenshots/parallel-routing-paths-issue.png)
