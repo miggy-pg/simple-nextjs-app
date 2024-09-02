@@ -345,7 +345,7 @@ https://nextjs.org/docs/app/building-your-application/routing/intercepting-route
 
 ![](screenshots/intercepting-route.png)
 
-- To use intercepting routem, you need to use parenthesis **()** with the URL path location followed by the filename/route name (e.g. **(.)image**)
+- To use intercepting route, you need to use parenthesis **()** with the URL path location followed by the filename/route name (e.g. **(.)image**)
 - An alternative route which sometimes gets activated depending on whether you are navigating to it through an internal link from within the page or manually inputted the URL or from an external link. The idea is, **for that same path, different pages are shown depending on how you got there**.
 - The intercepting route essentially intercepts an internal navigation request. Instead of showing the page you would see if you reload the page or come to the page from outside the website, a **different page will be shown**.
 - Useful for showing modal
