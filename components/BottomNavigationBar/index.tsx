@@ -9,9 +9,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Home, Layers, Phone, User2 } from "lucide-react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 import { usePathname } from "next/navigation";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants } from "../ui/button";
 
 const MENU_ITEMS = [
   { name: "Home", icon: <Home />, link: "/" },
@@ -20,7 +20,7 @@ const MENU_ITEMS = [
   { name: "Contacts", icon: <Phone />, link: "/contact" },
 ];
 
-function MainHeader() {
+function BottomNavigationBar() {
   const pathname = usePathname();
 
   return (
@@ -38,7 +38,7 @@ function MainHeader() {
                     <Link
                       href={item.link}
                       className={cn(
-                        buttonVariants({ size: "xs" }),
+                        buttonVariants({ variant: "link", size: "xs" }),
                         "hover:text-[#FADFA1] text-[#fff] mx-8",
                         pathname === item.link && "text-[#FADFA1]"
                       )}
@@ -56,4 +56,4 @@ function MainHeader() {
   );
 }
 
-export default MainHeader;
+export default BottomNavigationBar;
