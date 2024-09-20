@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -10,11 +9,16 @@ export default function Home() {
             href="/blog"
             className="text-xl hover:underline underline-offset-8"
           >
-            Blog
+            Login
           </Link>
         </div>
-        <div>Your legal advisers for the problems of this century</div>
-        <div>We offer solutions adapted to today&rsquo;s needs</div>
+        <div className="flex flex-col justify-start py-20 px-10">
+          <span className="text-5xl">
+            Your legal advisers for the problems of this century
+          </span>
+          <div>We offer solutions adapted to today&rsquo;s needs</div>
+          <div>View More</div>
+        </div>
       </div>
     </main>
   );
