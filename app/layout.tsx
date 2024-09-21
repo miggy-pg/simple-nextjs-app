@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ScrollSpy from "@/components/ScrollSpy";
+import ScrollSpy from "@/components/ScrollSpy/scroll-spy";
 import Head from "next/head";
 import icon from "../public/favicon.ico";
 
