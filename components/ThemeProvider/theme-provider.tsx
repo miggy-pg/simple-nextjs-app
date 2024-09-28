@@ -2,11 +2,6 @@
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
-import { HTMLAttributes } from "react";
-
-interface CThemeProviderProps extends ThemeProviderProps {
-  suppressHydrationWarning: HTMLAttributes<HTMLHtmlElement>;
-}
 
 function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return <NextThemesProvider {...props}>{children}</NextThemesProvider>;

@@ -6,6 +6,9 @@ import Head from "next/head";
 // theme provider
 import ThemeProvider from "@/components/ThemeProvider/theme-provider";
 import ThemeToggler from "@/components/ThemeToggler/theme-toggler";
+import Header from "@/components/Header/header";
+import { cn } from "@/lib/utils";
+import Template from "../components/Template/template";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,18 +23,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "light" }} suppressHydrationWarning>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <ThemeToggler />
-      <ThemeProvider attribute="class" defaultTheme="light">
-        <body className={inter.className}>
-          {/* <ScrollSpy /> */}
-          {children}
-        </body>
-      </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <Template>
+            {/* <ScrollSpy /> */}
+            {children}
+          </Template>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

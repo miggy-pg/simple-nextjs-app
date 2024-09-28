@@ -1,20 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
-
 import { useTheme } from "next-themes";
 import { Button } from "../ui/button";
 import { MoonIcon, SunIcon } from "lucide-react";
 
 function ThemeToggler() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState<boolean>(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <div>
