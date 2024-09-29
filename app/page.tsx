@@ -1,8 +1,10 @@
 import Link from "next/link";
+import CallToAction from "@/components/CallToAction/call-to-action";
 
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between">
+      <CallToAction />
       {/* <div className="absolute bg-[#FF6562] right-0 w-4/12 h-full">
         <div className="flex justify-end pr-16 pt-4">
           <Link
