@@ -12,15 +12,9 @@ function CallToAction() {
           <TabsTrigger value="philosophy">Password</TabsTrigger>
           <TabsTrigger value="spaces">Password</TabsTrigger>
         </TabsList>
-        <TabsContent value="services">
-          Make changes to your account here.
-        </TabsContent>
-        <TabsContent value="offices">
-          Make changes to your account here.
-        </TabsContent>
-        <TabsContent value="team">
-          Make changes to your account here.
-        </TabsContent>
+        <TabsContent value="services"></TabsContent>
+        <TabsContent value="offices"></TabsContent>
+        <TabsContent value="team"></TabsContent>
         <TabsContent value="philosophy">Change your password here.</TabsContent>
         <TabsContent value="spaces">Change your password here.</TabsContent>
       </Tabs>
