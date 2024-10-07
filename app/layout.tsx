@@ -9,6 +9,7 @@ import ThemeToggler from "@/components/ThemeToggler/theme-toggler";
 import Header from "@/components/Header/header";
 import { cn } from "@/lib/utils";
 import Template from "../components/Template/template";
+import MobileNav from "../components/MobileNav/mobile-nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <MobileNav />
           <Header />
           <Template>
             {/* <ScrollSpy /> */}

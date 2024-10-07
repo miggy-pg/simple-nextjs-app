@@ -14,13 +14,52 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import logo from "@/assets/logo-vector.webp";
+import { MenuItemProps } from "@/types";
+
+import {
+  Building,
+  House,
+  LightbulbIcon,
+  PersonStanding,
+  Settings,
+} from "lucide-react";
+
+const menuItems: MenuItemProps[] = [
+  {
+    name: "Office",
+    path: "/offices",
+    icon: <Building />,
+  },
+  {
+    name: "Services",
+    path: "/services",
+    icon: <Settings />,
+  },
+  {
+    name: "Team",
+    path: "/team",
+    icon: <PersonStanding />,
+  },
+  {
+    name: "Philosophy",
+    path: "/philosophy",
+    icon: <LightbulbIcon />,
+  },
+  {
+    name: "Spaces",
+    path: "/spaces",
+    icon: <House />,
+  },
+];
 
 function MobileNav() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true })
+  return (
+    <div className="w-dvw bg-red-200 rounded-xl p-4 fixed bottom-1 flex gap-10 justify-center sm:hidden">
+      {menuItems.map((menu, idx) => (
+        <span key={idx}>{menu.icon}</span>
+      ))}
+    </div>
   );
-
-  return <footer className="fixed bottom-0 flex sm:hidden"></footer>;
 }
 
 export default MobileNav;
