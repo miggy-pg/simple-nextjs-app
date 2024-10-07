@@ -1,11 +1,11 @@
 import Link from "next/link";
-import CallToAction from "@/components/CallToAction/call-to-action";
+import MobileNav from "@/components/MobileNav/mobile-nav";
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between">
-      <CallToAction />
-      {/* <div className="absolute bg-[#FF6562] right-0 w-4/12 h-full">
+    <>
+      <main className="border-2 border-red-500 relative flex min-h-screen flex-col items-center justify-between md:justify-center">
+        {/* <div className="absolute bg-[#FF6562] right-0 w-4/12 h-full">
         <div className="flex justify-end pr-16 pt-4">
           <Link
             href="/blog"
@@ -22,6 +22,8 @@ export default function Home() {
           <div>View More</div>
         </div>
       </div> */}
-    </main>
+      </main>
+      <MobileNav />
+    </>
   );
 }
