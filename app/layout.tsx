@@ -5,9 +5,7 @@ import ScrollSpy from "@/components/ScrollSpy/scroll-spy";
 import Head from "next/head";
 // theme provider
 import ThemeProvider from "@/components/ThemeProvider/theme-provider";
-import ThemeToggler from "@/components/ThemeToggler/theme-toggler";
 import Header from "@/components/Header/header";
-import { cn } from "@/lib/utils";
 import Template from "../components/Template/template";
 import MobileNav from "../components/MobileNav/mobile-nav";
 
@@ -32,12 +30,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <MobileNav />
           <Header />
           <Template>
             {/* <ScrollSpy /> */}
             {children}
           </Template>
+          <MobileNav />
         </ThemeProvider>
       </body>
     </html>

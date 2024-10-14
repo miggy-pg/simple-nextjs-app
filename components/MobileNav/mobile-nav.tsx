@@ -1,63 +1,17 @@
-"use client";
-
-import React from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import Autoplay from "embla-carousel-autoplay";
-
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Image from "next/image";
-import logo from "@/assets/logo-vector.webp";
-import { MenuItemProps } from "@/types";
-
-import {
-  Building,
-  House,
-  LightbulbIcon,
-  PersonStanding,
-  Settings,
-} from "lucide-react";
-
-const menuItems: MenuItemProps[] = [
-  {
-    name: "Office",
-    path: "/offices",
-    icon: <Building />,
-  },
-  {
-    name: "Services",
-    path: "/services",
-    icon: <Settings />,
-  },
-  {
-    name: "Team",
-    path: "/team",
-    icon: <PersonStanding />,
-  },
-  {
-    name: "Philosophy",
-    path: "/philosophy",
-    icon: <LightbulbIcon />,
-  },
-  {
-    name: "Spaces",
-    path: "/spaces",
-    icon: <House />,
-  },
-];
+import Link from "next/link";
+import { menuItems } from "@/data";
 
 function MobileNav() {
   return (
-    <div className="w-dvw bg-red-200 rounded-xl p-4 fixed bottom-1 flex gap-10 justify-center sm:hidden">
-      {menuItems.map((menu, idx) => (
-        <span key={idx}>{menu.icon}</span>
-      ))}
+    <div className="fixed w-dvw bottom-0 flex justify-center sm:hidden">
+      <div className="absolute rounded-xl w-9/12 pt-8 pb-4 flex bg-white-200 gap-12 bottom-0 justify-center xs:gap-16">
+        {menuItems.map(({ name, path, icon: Icon }, idx) => (
+          <Link href={path} key={idx} className="flex flex-col justify-center">
+            <Icon className="w-6 h-6 mx-auto" />
+            <p className="font-light text-xs pt-2">{name}</p>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

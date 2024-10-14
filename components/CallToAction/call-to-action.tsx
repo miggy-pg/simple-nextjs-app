@@ -16,7 +16,7 @@ import {
 import Image from "next/image";
 import logo from "@/assets/logo-vector.webp";
 
-function MobileNav() {
+function CallToAction() {
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
@@ -69,4 +69,4 @@ function MobileNav() {
   );
 }
 
-export default MobileNav;
+export default CallToAction;
