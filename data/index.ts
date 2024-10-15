@@ -1,5 +1,3 @@
-import { MenuItemProps } from "../types";
-
 import {
   Building,
   House,
@@ -7,6 +5,7 @@ import {
   PersonStanding,
   Settings,
 } from "lucide-react";
+import { MenuItemProps } from "@/next-types";
 
 const menuItems: MenuItemProps[] = [
   {

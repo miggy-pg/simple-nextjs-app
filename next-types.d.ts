@@ -1,6 +1,6 @@
 import { LucideProps } from "lucide-react";
 
-export interface MenuItemProps {
+interface MenuItemProps {
   name: string;
   path: string;
   icon: React.ComponentType<LucideProps>;
