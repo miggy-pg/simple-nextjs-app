@@ -18,6 +18,10 @@ const config: Config = {
         "signifier-medium": ["var(--font-signifier-medium)"],
         "signifier-light": ["var(--font-signifier-light)"],
         "signifier-bold": ["var(--font-signifier-bold)"],
+        sohne: ["var(--font-sohne-regular)"],
+        "sohne-light": ["var(--font-sohne-light)"],
+        "sohne-extralight": ["var(--font-sohne-extralight)"],
+        "sohne-halffat": ["var(--font-sohne-halffat)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

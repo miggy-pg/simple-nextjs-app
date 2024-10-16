@@ -40,6 +40,30 @@ const signifierExtralight = localFont({
   variable: "--font-signfier-extralight",
 });
 
+const sohneRegular = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSohne-Buch.otf",
+  variable: "--font-sohne-regular",
+});
+
+const sohneLight = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSohne-Leicht.otf",
+  variable: "--font-sohne-light",
+});
+
+const sohneExtralight = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSohne-Extraleicht.otf",
+  variable: "--font-sohne-extralight",
+});
+
+const sohneHalfFat = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSohne-Halbfett.otf",
+  variable: "--font-sohne-halffat",
+});
+
 export const metadata: Metadata = {
   title: "Lorraine Wolf",
   description: "Your technology lawyer",
@@ -59,16 +83,20 @@ export default function RootLayout({
           signifierMedium.variable,
           signifierLight.variable,
           signifierBold.variable,
-          signifierExtralight.variable
+          signifierExtralight.variable,
+          sohneRegular.variable,
+          sohneLight.variable,
+          sohneExtralight.variable,
+          sohneHalfFat.variable
         )}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
+          {/* <Header /> */}
           <Template>
             {/* <ScrollSpy /> */}
             {children}

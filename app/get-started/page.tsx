@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import GoogleIcon from "@/styles/assets/google.png";
-import FacebookIcon from "@/styles/assets/facebook.png";
+import MicrosoftIcon from "@/styles/assets/microsoft.png";
+import AppleIcon from "@/styles/assets/apple.png";
 import { Mail } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
@@ -20,13 +21,23 @@ export default function GetStarted() {
           </p>
         </div>
         <div className="flex flex-col mx-2 px-10 border-red-500 border-2">
-          <Button className="bg-[#fdfdfd] p-6 text-white">
-            <Image src={FacebookIcon} alt="" width={15} height={15}></Image>
-            Continue with Facebook
-          </Button>
-          <Button className="bg-[#fdfdfd] text-black">
+          <Button className="font-sohne dark:text-[#fef8ee] dark:bg-transparent dark:border-2">
             <Image src={GoogleIcon} alt="" width={15} height={15}></Image>
             Continue with Google
+          </Button>
+          <Button className="font-sohne p-6 dark:text-[#fef8ee] dark:bg-transparent dark:border-2">
+            <Image
+              src={AppleIcon}
+              className="dark:fill-white"
+              alt=""
+              width={15}
+              height={15}
+            ></Image>
+            Continue with Apple
+          </Button>
+          <Button className="font-sohne p-6 dark:text-[#fef8ee] dark:bg-transparent text-white dark:border-2">
+            <Image src={MicrosoftIcon} alt="" width={15} height={15}></Image>
+            Continue with Microsoft
           </Button>
           <p>or</p>
           <Input
