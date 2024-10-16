@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import ScrollSpy from "@/components/ScrollSpy/scroll-spy";
 import Head from "next/head";
@@ -8,8 +9,36 @@ import ThemeProvider from "@/components/ThemeProvider/theme-provider";
 import Header from "@/components/Header/header";
 import Template from "../components/Template/template";
 import MobileNav from "../components/MobileNav/mobile-nav";
+import { cn } from "../lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const signifierRegular = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSignifier-Regular.otf",
+  variable: "--font-signifier-regular",
+});
+
+const signifierMedium = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSignifier-Medium.otf",
+  variable: "--font-signifier-medium",
+});
+
+const signifierLight = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSignifier-Light.otf",
+  variable: "--font-signifier-light",
+});
+
+const signifierBold = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSignifier-Bold.otf",
+  variable: "--font-signifier-bold",
+});
+const signifierExtralight = localFont({
+  display: "swap",
+  src: "../styles/fonts/TestSignifier-Extralight.otf",
+  variable: "--font-signfier-extralight",
+});
 
 export const metadata: Metadata = {
   title: "Lorraine Wolf",
@@ -23,7 +52,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body
+        className={cn(
+          "antialiased",
+          signifierRegular.variable,
+          signifierMedium.variable,
+          signifierLight.variable,
+          signifierBold.variable,
+          signifierExtralight.variable
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

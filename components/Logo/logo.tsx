@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import logo from "@/assets/logo-vector.webp";
+import logo from "@/styles/assets/logo-vector.webp";
 import Link from "next/link";
 
 function Logo() {

@@ -12,6 +12,13 @@ const config: Config = {
       screens: {
         xs: "480px",
       },
+      fontFamily: {
+        signifier: ["var(--font-signifier-regular)"],
+        "signifir-extralight": ["var(--font-signfier-extralight)"],
+        "signifier-medium": ["var(--font-signifier-medium)"],
+        "signifier-light": ["var(--font-signifier-light)"],
+        "signifier-bold": ["var(--font-signifier-bold)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -53,6 +60,8 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        // f1fcff (Button text and Get started)
+        //
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

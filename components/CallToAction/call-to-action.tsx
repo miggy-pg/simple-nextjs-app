@@ -14,7 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import logo from "@/assets/logo-vector.webp";
+import logo from "@/styles/assets/logo-vector.webp";
 
 function CallToAction() {
   const plugin = React.useRef(
