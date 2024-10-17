@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import ScrollSpy from "@/components/ScrollSpy/scroll-spy";
@@ -78,7 +77,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "antialiased",
+          "antialiased overflow-hidden",
           signifierRegular.variable,
           signifierMedium.variable,
           signifierLight.variable,
@@ -101,7 +100,7 @@ export default function RootLayout({
             {/* <ScrollSpy /> */}
             {children}
           </Template>
-          <MobileNav />
+          {/* <MobileNav /> */}
         </ThemeProvider>
       </body>
     </html>
