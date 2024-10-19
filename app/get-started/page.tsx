@@ -91,15 +91,24 @@ export default function GetStarted() {
         <footer className="flex text-center">
           <p className="font-sohne font-light text-xs antialiased dark:text-[#767676]">
             By continuing, you agree to our &nbsp;
-            <Link href="" className="underline hover:no-underline">
+            <Link
+              href="/terms-of-service"
+              className="underline hover:no-underline"
+            >
               <strong>Terms of Service</strong>
             </Link>
             , &nbsp;
-            <Link href="" className="underline hover:no-underline">
+            <Link
+              href="/privacy-policy"
+              className="underline hover:no-underline"
+            >
               <strong>Privacy Policy</strong>
             </Link>{" "}
             &nbsp; and &nbsp;
-            <Link href="" className="underline hover:no-underline">
+            <Link
+              href="/data-protection-agreement"
+              className="underline hover:no-underline"
+            >
               <strong>Data Protection Agreement</strong>
             </Link>
           </p>
