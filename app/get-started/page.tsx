@@ -31,7 +31,7 @@ function Page() {
                 key={item.name}
                 className={cn(
                   buttonVariants({ variant: "link", size: "xs" }),
-                  "hover:text-[#FADFA1] text-zinc-500 py-8 px-2 cursor-pointer pointer-events-auto",
+                  "hover:text-[#FADFA1] text-zinc-500 py-8 px-5 cursor-pointer pointer-events-auto",
                   pathname === item.link && "text-[#fabe31]"
                 )}
               >
